@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import { IoCartOutline } from "react-icons/io5";
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,24 +38,24 @@ const Navbar = () => {
                     {/* Desktop Menu */}
                     <div className="hidden sm:block sm:ml-6">
                         <div className="flex">
-                            <a
-                                href="#"
+                            <Link
+                                to="/"
                                 className="px-3 py-2 rounded-md text-sm font-medium leading-5 text-black hover:text-gray-500 focus:outline-none focus:text-gray-300 transition duration-150 ease-in-out"
                             >
                                 HOME
-                            </a>
-                            <a
-                                href="#"
+                            </Link>
+                            <Link
+                                to="/cart"
                                 className="px-3 py-2 rounded-md text-sm font-medium leading-5 text-black hover:text-gray-500 focus:outline-none focus:text-gray-300 transition duration-150 ease-in-out"
                             >
                                 <IoCartOutline size={20} />
-                            </a>
-                            <a
-                                href="#"
+                            </Link>
+                            <Link
+                                to = '/catalogue'
                                 className="px-3 py-2 rounded-md text-sm font-medium leading-5 text-black hover:text-gray-500 focus:outline-none focus:text-gray-300 transition duration-150 ease-in-out"
                             >
                                 SHOP
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -63,24 +64,24 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <div className={`sm:hidden ${isOpen ? 'block' : 'hidden'}`} id="mobile-menu">
                 <div className="px-2 pt-2 pb-3">
-                    <a
-                        href="#"
+                    <Link
+                        to = "/"
                         className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 transition duration-150 ease-in-out"
                     >
                         Home
-                    </a>
+                    </Link>
                     <a
                         href="#"
                         className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 transition duration-150 ease-in-out"
                     >
                         About
                     </a>
-                    <a
-                        href="#"
+                    <Link
+                        to = '/catalogue'
                         className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 transition duration-150 ease-in-out"
                     >
-                        Contact
-                    </a>
+                        SHOP
+                    </Link>
                 </div>
             </div>
         </nav>
